@@ -1,32 +1,22 @@
-# gh-zsh
-A simple script to setup an awesome shell environment for Ubuntu and MacOS, with:
+# presto-prezto
+
+> Inspired by and based on [gh-zsh](https://github.com/gustavohellwig/gh-zsh) repository
+
+A simple one-shot script to setup an awesome shell environment for Ubuntu and MacOS, with:
+* prezto (https://github.com/sorin-ionescu/prezto)
+* clvv/fasd (https://github.com/clvv/fasd)
+* junegunn/fzf (https://github.com/junegunn/fzf)
+* Peltoche/lsd (https://github.com/Peltoche/lsd)
 * powerlevel10k theme (https://github.com/romkatv/powerlevel10k)
-* zsh-completions (https://github.com/zsh-users/zsh-completions)
-* zsh-autosuggestions (https://github.com/zsh-users/zsh-autosuggestions)
-* fast-syntax-highlighting (https://github.com/zdharma-continuum/fast-syntax-highlighting/
-* completion (https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/lib/completion.zsh)
-* history (https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/lib/history.zsh)
-* key-bindings (https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/lib/key-bindings.zsh)
-
-Sets following useful aliases:
-* ..='cd ..'
-* ...='cd ../..'
-* ....='cd ../../..'
-* grep='grep --color=auto'
-
-For Linux
-* bat='batcat --theme base16 -p'
-* ls='ls -h --color=auto'
-* la='ls -la --color=auto'
 
 ## Demo
 
-Currently the command prompt looks like this:
-![ZSH-Prompt](https://github.com/gustavohellwig/gh-zsh/blob/2e0ac65f20691f1f26e17145013e4a1260a0128e/gh-zsh-example.png)
+After the installation is complete, the command prompt will look like this:
+![ZSH-Prompt](./presto-prezto-example.png)
 ## Installation
 
 ``` bash
-curl -fsSL https://raw.githubusercontent.com/gustavohellwig/gh-zsh/main/gh-zsh.sh | bash
+curl -fsSL https://raw.githubusercontent.com/JGroxz/presto-prezto/main/presto-prezto.sh | bash
 ```
 
 ## Notes
