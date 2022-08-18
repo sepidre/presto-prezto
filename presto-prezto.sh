@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# Based on: https://github.com/gustavohellwig/gh-zsh
+
 #--------------------------------------------------
 # Shell Configurations
 #--------------------------------------------------
@@ -128,36 +130,43 @@ if [[ "$OS" == "Linux" ]] || [[ "$OS" == "Darwin" ]] ; then
     if mv -n ~/.zshrc ~/.zshrc-backup-$(date +"%Y-%m-%d") &> /dev/null; then
         echo -e "\n--> Backing up the current .zshrc config to .zshrc-backup-date"
     fi
-    (cd ~/ && curl -O https://raw.githubusercontent.com/gustavohellwig/gh-zsh/main/.zshrc) &> /dev/null
-    echo "source $HOME/.zsh/powerlevel10k/powerlevel10k.zsh-theme" >>~/.zshrc
-    echo "source $HOME/.zsh/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh" >> ~/.zshrc
-    echo "source $HOME/.zsh/completion.zsh" >> ~/.zshrc
-    echo "source $HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh" >> ~/.zshrc
-    echo "source $HOME/.zsh/history.zsh" >> ~/.zshrc
-    echo "source $HOME/.zsh/key-bindings.zsh" >> ~/.zshrc
+
+    #--------------------------------------------------
+    # Prezto and plugins
+    #--------------------------------------------------
+    echo -e "\nInstalling Prezto"
+    # Install Prezto (by downloading the repo int .zprezto folder in our home directory): https://github.com/sorin-ionescu/prezto
+    git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+
+    # Create symlinks to link Zsh to Prezto configurations (this will overwrite default Zsh files)
+    echo -e "\nCreating Prezto symlinks"
+    ln -sf ~/.zprezto/runcoms/zlogin ~/.zlogin
+    ln -sf ~/.zprezto/runcoms/zlogout ~/.zlogout
+    ln -sf ~/.zprezto/runcoms/zpreztorc ~/.zpreztorc
+    ln -sf ~/.zprezto/runcoms/zprofile ~/.zprofile
+    ln -sf ~/.zprezto/runcoms/zshenv ~/.zshenv
+    ln -sf ~/.zprezto/runcoms/zshrc ~/.zshrc
+
+    # Patch Prezto runcoms
+    echo -e "\nPatching Prezto runcoms"
+    (cd ~/.zprezto/runcoms/ && curl -O https://raw.githubusercontent.com/JGroxz/presto-prezto/main/zshrc) &> /dev/null
+    (cd ~/.zprezto/runcoms/ && curl -O https://raw.githubusercontent.com/JGroxz/presto-prezto/main/zpreztorc) &> /dev/null
     if [[ "$OS" == "Linux" ]]; then
         sudo cp /home/"$(whoami)"/.zshrc /root/
     fi
+
+    echo -e "\nPrezto configuration complete (plugins will be installed on the first shell run)"
+
     #--------------------------------------------------
-    # Theme Installation
+    # Theme (Powerlevel10k)
     #--------------------------------------------------
-    echo -e "\nTheme Installation"
-    git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.zsh/powerlevel10k &> /dev/null
-    (cd ~/ && curl -O https://raw.githubusercontent.com/gustavohellwig/gh-zsh/main/.p10k.zsh) &> /dev/null
+    echo -e "\nDownloading theme configuration"
+    (cd ~/ && curl -O https://raw.githubusercontent.com/JGroxz/presto-prezto/main/.p10k.zsh) &> /dev/null
     if [[ "$OS" == "Linux" ]]; then
         sudo cp /home/"$(whoami)"/.p10k.zsh /root/
     fi
-    #--------------------------------------------------
-    # Plugins Installations
-    #--------------------------------------------------
-    echo -e "\nPlugins Installations"
-    git clone https://github.com/zdharma-continuum/fast-syntax-highlighting.git ~/.zsh/fast-syntax-highlighting &> /dev/null
-    git clone https://github.com/zsh-users/zsh-autosuggestions.git ~/.zsh/zsh-autosuggestions &> /dev/null
-    (cd ~/.zsh/ && curl -O https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/lib/completion.zsh) &> /dev/null
-    (cd ~/.zsh/ && curl -O https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/lib/history.zsh) &> /dev/null
-    (cd ~/.zsh/ && curl -O https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/lib/key-bindings.zsh) &> /dev/null
+    echo -e "\nTheme configuration done"
 
-    echo -e "\nInstallation Finished"
     echo -e "\n--> Reopen the terminal if the theme doesn't load automatically.\n"
 
     # Inspired from: https://github.com/romkatv/zsh4humans/blob/v5/sc/exec-zsh-i
