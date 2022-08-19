@@ -3,11 +3,11 @@
 > Inspired by and based on [gh-zsh](https://github.com/gustavohellwig/gh-zsh) repository
 
 A simple one-shot script to setup an awesome shell environment for Ubuntu and MacOS, with:
-* prezto (https://github.com/sorin-ionescu/prezto)
-* clvv/fasd (https://github.com/clvv/fasd)
-* junegunn/fzf (https://github.com/junegunn/fzf)
-* Peltoche/lsd (https://github.com/Peltoche/lsd)
-* powerlevel10k theme (https://github.com/romkatv/powerlevel10k)
+* [Prezto](https://github.com/sorin-ionescu/prezto) - Zsh framework with nice built-in plugins, such as fuzzy search and syntax highlighting
+* [junegunn/fzf](https://github.com/junegunn/fzf) - fuzzy search for command line
+* [clvv/fasd](https://github.com/clvv/fasd) - allows to run commands from history without fully typing them
+* [Peltoche/lsd](https://github.com/Peltoche/lsd) - enables more informative, colored `ls` output
+* [powerlevel10k](https://github.com/romkatv/powerlevel10k) - an awesome shell theme
 
 ## Demo
 
