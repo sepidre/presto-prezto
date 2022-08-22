@@ -252,7 +252,7 @@ if [[ "$OS" == "Linux" ]] || [[ "$OS" == "Darwin" ]] ; then
 
     if [[ "$WITH_FONT" == true ]]; then
         echo
-        echo -e "Make sure to enable the new Meslo Nerd Font in your terminal using the instructions from here:\n    https://github.com/romkatv/powerlevel10k#meslo-nerd-font-patched-for-powerlevel10k"
+        echo -e "(!) Make sure to enable the new Meslo Nerd Font in your terminal using the instructions from here:\n    https://github.com/romkatv/powerlevel10k#meslo-nerd-font-patched-for-powerlevel10k\n\n"
     fi
 
     # Inspired by https://github.com/romkatv/zsh4humans/blob/v5/sc/exec-zsh-i
