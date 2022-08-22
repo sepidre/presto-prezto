@@ -219,7 +219,6 @@ if [[ "$OS" == "Linux" ]] || [[ "$OS" == "Darwin" ]] ; then
     #--------------------------------------------------
     if [[ "$WITH_FONT" == true ]]; then
         echo
-
         echo -e "Installing Meslo Nerd Font"
 
         # Select fonts folder based on the current platform
@@ -242,8 +241,7 @@ if [[ "$OS" == "Linux" ]] || [[ "$OS" == "Darwin" ]] ; then
         # Refresh font cache if on Linux
         if [[ "$OS" == "Linux" ]]; then
             echo
-            
-            echo -e "\nResetting Linux font cache"
+            echo -e "Resetting Linux font cache"
             (fc-cache -f -v) &> /dev/null
         fi
 
