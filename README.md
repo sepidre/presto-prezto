@@ -9,7 +9,7 @@ A simple one-shot script to setup an awesome shell environment for Ubuntu and Ma
 * [Peltoche/lsd](https://github.com/Peltoche/lsd) (LSDeluxe) - enables more informative, colored `ls` output
 * [yuhonas/zsh-aliases-lsd](https://github.com/yuhonas/zsh-aliases-lsd) - adds `ls` aliases to work with LSDeluxe
 * [powerlevel10k](https://github.com/romkatv/powerlevel10k) - an awesome shell theme
-* (optional) [Meslo Nerd Font](https://github.com/romkatv/powerlevel10k#meslo-nerd-font-patched-for-powerlevel10k) - font recommended by the creator of Powerlevel10k theme, add multiple icons and glyphs to further improve the looks and readability
+* (optional) [Meslo Nerd Font](https://github.com/romkatv/powerlevel10k#meslo-nerd-font-patched-for-powerlevel10k) - font recommended by the creator of _Powerlevel10k_ theme, adds multiple icons and glyphs to further improve the looks and readability
 
 ## Installation
 
