@@ -205,14 +205,14 @@ if [[ "$OS" == "Linux" ]] || [[ "$OS" == "Darwin" ]] ; then
     if [[ "$OS" == "Linux" ]]; then
         sudo cp /home/"$(whoami)"/.p10k.zsh /root/
     fi
-    echo -e "\nTheme configuration done\n"
+    echo -e "\nTheme configuration done"
 
     #--------------------------------------------------
     # Meslo Nerd Font (recommended by the creator of Powerlevel10k theme)
     #--------------------------------------------------
     if [[ "$WITH_FONT" == true ]]; then
         echo
-        
+
         echo -e "Installing Meslo Nerd Font"
 
         # Select fonts folder based on the current platform
