@@ -242,6 +242,7 @@ if [[ "$OS" == "Linux" ]] || [[ "$OS" == "Darwin" ]] ; then
         # Refresh font cache if on Linux
         if [[ "$OS" == "Linux" ]]; then
             echo
+            
             echo -e "\nResetting Linux font cache"
             (fc-cache -f -v) &> /dev/null
         fi
