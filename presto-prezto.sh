@@ -210,7 +210,7 @@ if [[ "$OS" == "Linux" ]] || [[ "$OS" == "Darwin" ]] ; then
     #--------------------------------------------------
     # Meslo Nerd Font (recommended by the creator of Powerlevel10k theme)
     #--------------------------------------------------
-    if [[ "$WITH_FONT" == "true" ]]; then
+    if [[ "$WITH_FONT" == true ]]; then
         echo "\nInstalling Meslo Nerd Font"
 
         # Select fonts folder based on the current platform
