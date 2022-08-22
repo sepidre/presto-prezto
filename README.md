@@ -22,9 +22,9 @@ curl -fsSL https://raw.githubusercontent.com/JGroxz/presto-prezto/main/presto-pr
 
 ### Advanced (with Meslo Nerd Font)
 
-1. Run the installation script with the `-f` flag:
+1. Run the installation script with the `--font` flag:
    ``` bash
-   curl -fsSL https://raw.githubusercontent.com/JGroxz/presto-prezto/main/presto-prezto.sh | bash -f
+   curl -fsSL https://raw.githubusercontent.com/JGroxz/presto-prezto/main/presto-prezto.sh | bash -s -- --font
    ```
 2. Set up your terminal to use the new Meslo Nerd Font by following the [instructions here](https://github.com/romkatv/powerlevel10k#meslo-nerd-font-patched-for-powerlevel10k).
 
