@@ -10,8 +10,8 @@ if [[ "$OS" == "Linux" ]] || [[ "$OS" == "Darwin" ]] ; then
     echo
     if [[ "$OS" == "Linux" ]]; then
         echo "--> Please, type your Password:"
-        sudo apt install zsh bat git -y &> /dev/null
-        echo -e "\nInstalling zsh, bat, and git"
+        sudo apt install zsh bat git snap -y &> /dev/null
+        echo -e "\nInstalling zsh, bat, git and snap"
     fi
     if [[ "$OS" == "Darwin" ]]; then
         # Inspired from https://github.com/Homebrew/brew
@@ -129,6 +129,17 @@ if [[ "$OS" == "Linux" ]] || [[ "$OS" == "Darwin" ]] ; then
     fi
     if mv -n ~/.zshrc ~/.zshrc-backup-$(date +"%Y-%m-%d") &> /dev/null; then
         echo -e "\n--> Backing up the current .zshrc config to .zshrc-backup-date"
+    fi
+
+    #--------------------------------------------------
+    # LSDeluxe
+    #--------------------------------------------------
+    echo -e "\nInstalling LSDeluxe"
+    if [[ "$OS" == "Linux" ]]; then
+        sudo snap install lsd &> /dev/null
+    fi
+    if [[ "$OS" == "Darwin" ]]; then
+        brew install lsd &> /dev/null
     fi
 
     #--------------------------------------------------
