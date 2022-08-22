@@ -211,7 +211,7 @@ if [[ "$OS" == "Linux" ]] || [[ "$OS" == "Darwin" ]] ; then
     # Meslo Nerd Font (recommended by the creator of Powerlevel10k theme)
     #--------------------------------------------------
     if [[ "$WITH_FONT" == true ]]; then
-        echo "\nInstalling Meslo Nerd Font"
+        echo -e "\nInstalling Meslo Nerd Font"
 
         # Select fonts folder based on the current platform
         if [[ "$OS" == "Linux" ]]; then
@@ -235,7 +235,7 @@ if [[ "$OS" == "Linux" ]] || [[ "$OS" == "Darwin" ]] ; then
             fc-cache -f -v
         fi
 
-        echo -e "\nInstalled the font. Make sure to enable it in your terminal using the instructions from here: https://github.com/romkatv/powerlevel10k#meslo-nerd-font-patched-for-powerlevel10k"
+        echo -e "\nInstalled the font. Make sure to enable it in your terminal using the instructions from here:\n    https://github.com/romkatv/powerlevel10k#meslo-nerd-font-patched-for-powerlevel10k"
     fi
 
     echo -e "\nPresto-Prezto configuration complete!\n"
