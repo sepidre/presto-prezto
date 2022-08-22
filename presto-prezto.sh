@@ -233,10 +233,10 @@ if [[ "$OS" == "Linux" ]] || [[ "$OS" == "Darwin" ]] ; then
         mkdir -p ${FONTS_FOLDER_PATH}
 
         # Download fonts
-        (curl -o "${FONTS_FOLDER_PATH}/MesloLGS NF Regular.ttf" "https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf") &> /dev/null
-        (curl -o "${FONTS_FOLDER_PATH}/MesloLGS NF Bold.ttf" "https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf") &> /dev/null
-        (curl -o "${FONTS_FOLDER_PATH}/MesloLGS NF Italic.ttf" "https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Italic.ttf") &> /dev/null
-        (curl -o "${FONTS_FOLDER_PATH}/MesloLGS NF Bold Italic.ttf" "https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf") &> /dev/null
+        (curl -Lo "${FONTS_FOLDER_PATH}/MesloLGS NF Regular.ttf" "https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf") &> /dev/null
+        (curl -Lo "${FONTS_FOLDER_PATH}/MesloLGS NF Bold.ttf" "https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf") &> /dev/null
+        (curl -Lo "${FONTS_FOLDER_PATH}/MesloLGS NF Italic.ttf" "https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Italic.ttf") &> /dev/null
+        (curl -Lo "${FONTS_FOLDER_PATH}/MesloLGS NF Bold Italic.ttf" "https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf") &> /dev/null
 
         # Refresh font cache if on Linux
         if [[ "$OS" == "Linux" ]]; then
