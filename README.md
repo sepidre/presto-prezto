@@ -13,17 +13,19 @@ A simple one-shot script to setup an awesome shell environment for Ubuntu and Ma
 
 ## Installation
 
-A. Simple (without the custom font):
-   ``` bash
-   curl -fsSL https://raw.githubusercontent.com/JGroxz/presto-prezto/main/presto-prezto.sh | bash
-   ```
+### Simple (without the custom font):
 
-B. Advanced (with Meslo Nerd Font):
-   1. Run the installation script:
-      ``` bash
-      curl -fsSL https://raw.githubusercontent.com/JGroxz/presto-prezto/main/presto-prezto.sh | bash --font
-      ```
-   2. Set up your terminal to use the new Meslo Nerd Font by following the [instructions here](https://github.com/romkatv/powerlevel10k#meslo-nerd-font-patched-for-powerlevel10k).
+Simply run this script:
+``` bash
+curl -fsSL https://raw.githubusercontent.com/JGroxz/presto-prezto/main/presto-prezto.sh | bash
+```
+
+### Advanced (with Meslo Nerd Font):
+1. Run the installation script:
+   ``` bash
+   curl -fsSL https://raw.githubusercontent.com/JGroxz/presto-prezto/main/presto-prezto.sh | bash --font
+   ```
+2. Set up your terminal to use the new Meslo Nerd Font by following the [instructions here](https://github.com/romkatv/powerlevel10k#meslo-nerd-font-patched-for-powerlevel10k).
 
 ## Demo
 
