@@ -14,9 +14,9 @@ A simple one-shot script to setup an awesome shell environment for Ubuntu and Ma
 ## Installation
 
 A. Simple (without the custom font):
-    ``` bash
-    curl -fsSL https://raw.githubusercontent.com/JGroxz/presto-prezto/main/presto-prezto.sh | bash
-    ```
+   ``` bash
+   curl -fsSL https://raw.githubusercontent.com/JGroxz/presto-prezto/main/presto-prezto.sh | bash
+   ```
 
 B. Advanced (with Meslo Nerd Font):
    1. Run the installation script:
