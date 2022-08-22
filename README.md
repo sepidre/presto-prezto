@@ -21,6 +21,7 @@ curl -fsSL https://raw.githubusercontent.com/JGroxz/presto-prezto/main/presto-pr
 ```
 
 ### Advanced (with Meslo Nerd Font)
+
 1. Run the installation script:
    ``` bash
    curl -fsSL https://raw.githubusercontent.com/JGroxz/presto-prezto/main/presto-prezto.sh | bash --font
