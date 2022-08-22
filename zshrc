@@ -5,7 +5,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# Source Prezto.
+# Source Prezto
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
@@ -19,7 +19,7 @@ source ~/.zplug/init.zsh
 # Select zplug plugins
 zplug "clvv/fasd"
 zplug "junegunn/fzf"
-zplug "Peltoche/lsd"
+zplug "yuhonas/zsh-aliases-lsd"
 zplug "romkatv/powerlevel10k", as:theme, depth:1
 
 # Make sure that plugins are installed
@@ -27,6 +27,9 @@ if ! zplug check --verbose; then
     printf "Installing missing zplug plugins...\n"
     zplug install
 fi
+
+# load Zplug plugins
+zplug load
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
