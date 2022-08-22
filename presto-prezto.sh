@@ -1,6 +1,35 @@
 #!/usr/bin/env bash
 
-# Based on: https://github.com/gustavohellwig/gh-zsh
+# A script for the quick setup of Zsh shell with Prezto, several useful plugins and an awesome theme.
+# 
+# Based on https://github.com/gustavohellwig/gh-zsh
+
+
+#--------------------------------------------------
+# Parse CLI options (logic based on https://github.com/ryanoasis/nerd-fonts/blob/master/install.sh)
+#--------------------------------------------------
+optspec=":f-:"
+while getopts "$optspec" optchar; do
+  case "${optchar}" in
+
+    # Short options
+    f) WITH_FONT=true;;
+
+    -)
+      case "${OPTARG}" in
+        # Long options
+        font) WITH_FONT=true;;
+      esac;;
+
+    *)
+      echo "Unknown option -${OPTARG}" >&2
+      exit 1
+      ;;
+
+  esac
+done
+shift $((OPTIND-1))
+
 
 #--------------------------------------------------
 # Shell Configurations
@@ -9,7 +38,7 @@ OS="$(uname)"
 if [[ "$OS" == "Linux" ]] || [[ "$OS" == "Darwin" ]] ; then
     echo
     if [[ "$OS" == "Linux" ]]; then
-        echo "--> Please, type your Password:"
+        echo "--> Please, type your password (to 'sudo apt install' the requirements):"
         sudo apt install zsh bat git snap -y &> /dev/null
         echo -e "\nInstalling zsh, bat, git and snap"
     fi
@@ -178,9 +207,40 @@ if [[ "$OS" == "Linux" ]] || [[ "$OS" == "Darwin" ]] ; then
     fi
     echo -e "\nTheme configuration done"
 
-    echo -e "\n--> Reopen the terminal if the theme doesn't load automatically.\n"
+    #--------------------------------------------------
+    # Meslo Nerd Font (recommended by the creator of Powerlevel10k theme)
+    #--------------------------------------------------
+    if [[ "$WITH_FONT" == "true" ]]; then
+        echo "\nInstalling Meslo Nerd Font"
 
-    # Inspired from: https://github.com/romkatv/zsh4humans/blob/v5/sc/exec-zsh-i
+        # Select fonts folder based on the current platform
+        if [[ "$OS" == "Linux" ]]; then
+            FONTS_FOLDER_PATH=~/.fonts
+        fi
+        if [[ "$OS" == "Darwin" ]]; then
+            FONTS_FOLDER_PATH=~/Library/Fonts
+        fi
+
+        # Make sure that the fonts directory exists
+        mkdir -p ${FONTS_FOLDER_PATH}
+
+        # Download fonts
+        curl -fLo "${FONTS_FOLDER_PATH}/MesloLGS NF Regular.ttf" "https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf"
+        curl -fLo "${FONTS_FOLDER_PATH}/MesloLGS NF Bold.ttf" "https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf"
+        curl -fLo "${FONTS_FOLDER_PATH}/MesloLGS NF Italic.ttf" "https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Italic.ttf"
+        curl -fLo "${FONTS_FOLDER_PATH}/MesloLGS NF Bold Italic.ttf" "https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf"
+
+        # Refresh font cache if on Linux
+        if [[ "$OS" == "Linux" ]]; then
+            fc-cache -f -v
+        fi
+
+        echo -e "\nInstalled the font. Make sure to enable it in your terminal using the instructions from here: https://github.com/romkatv/powerlevel10k#meslo-nerd-font-patched-for-powerlevel10k"
+    fi
+
+    echo -e "\nPresto-Prezto configuration complete!\n"
+
+    # Inspired by https://github.com/romkatv/zsh4humans/blob/v5/sc/exec-zsh-i
     try_exec_zsh() {
         >'/dev/null' 2>&1 command -v "$1" || 'return' '0'
         <'/dev/null' >'/dev/null' 2>&1 'command' "$1" '-fc' '
