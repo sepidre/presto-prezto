@@ -208,7 +208,7 @@ if [[ "$OS" == "Linux" ]] || [[ "$OS" == "Darwin" ]] ; then
         P10K_CONFIG_FILE=".p10k.zsh"
     fi
 
-    (cd ~/ && curl -O ".p10k.zsh" https://raw.githubusercontent.com/JGroxz/presto-prezto/main/${P10K_CONFIG_FILE}) &> /dev/null
+    (cd ~/ && curl -o ".p10k.zsh" "https://raw.githubusercontent.com/JGroxz/presto-prezto/main/${P10K_CONFIG_FILE}") &> /dev/null
     if [[ "$OS" == "Linux" ]]; then
         sudo cp /home/"$(whoami)"/.p10k.zsh /root/
     fi
