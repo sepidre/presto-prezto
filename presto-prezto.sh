@@ -245,10 +245,15 @@ if [[ "$OS" == "Linux" ]] || [[ "$OS" == "Darwin" ]] ; then
             (fc-cache -f -v) &> /dev/null
         fi
 
-        echo -e "\nInstalled the font. Make sure to enable it in your terminal using the instructions from here:\n    https://github.com/romkatv/powerlevel10k#meslo-nerd-font-patched-for-powerlevel10k"
+        echo -e "\nInstalled the font"
     fi
 
     echo -e "\nPresto-Prezto configuration complete!\n"
+
+    if [[ "$WITH_FONT" == true ]]; then
+        echo
+        echo -e "Make sure to enable it in your terminal using the instructions from here:\n    https://github.com/romkatv/powerlevel10k#meslo-nerd-font-patched-for-powerlevel10k"
+    fi
 
     # Inspired by https://github.com/romkatv/zsh4humans/blob/v5/sc/exec-zsh-i
     try_exec_zsh() {
