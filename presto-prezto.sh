@@ -201,7 +201,14 @@ if [[ "$OS" == "Linux" ]] || [[ "$OS" == "Darwin" ]] ; then
     # Theme (Powerlevel10k)
     #--------------------------------------------------
     echo -e "\nDownloading theme configuration"
-    (cd ~/ && curl -O https://raw.githubusercontent.com/JGroxz/presto-prezto/main/.p10k.zsh) &> /dev/null
+
+    if [[ "$WITH_FONT" == true ]]; then
+        P10K_CONFIG_FILE=".p10k.nerd-font.zsh"
+    else
+        P10K_CONFIG_FILE=".p10k.zsh"
+    fi
+
+    (cd ~/ && curl -O ".p10k.zsh" https://raw.githubusercontent.com/JGroxz/presto-prezto/main/${P10K_CONFIG_FILE}) &> /dev/null
     if [[ "$OS" == "Linux" ]]; then
         sudo cp /home/"$(whoami)"/.p10k.zsh /root/
     fi
