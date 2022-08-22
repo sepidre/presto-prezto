@@ -174,6 +174,7 @@ if [[ "$OS" == "Linux" ]] || [[ "$OS" == "Darwin" ]] ; then
     #--------------------------------------------------
     # Prezto and plugins
     #--------------------------------------------------
+    echo
     echo -e "\nInstalling Prezto"
     # Install Prezto (by downloading the repo int .zprezto folder in our home directory): https://github.com/sorin-ionescu/prezto
     git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
