@@ -15,14 +15,14 @@ A simple one-shot script to setup an awesome shell environment for Ubuntu and Ma
 
 ### Simple (without the custom font)
 
-Simply run this script:
+Run the installation script:
 ``` bash
 curl -fsSL https://raw.githubusercontent.com/JGroxz/presto-prezto/main/presto-prezto.sh | bash
 ```
 
 ### Advanced (with Meslo Nerd Font)
 
-1. Run the installation script:
+1. Run the installation script with `--font` flag:
    ``` bash
    curl -fsSL https://raw.githubusercontent.com/JGroxz/presto-prezto/main/presto-prezto.sh | bash --font
    ```
