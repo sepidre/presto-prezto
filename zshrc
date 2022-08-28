@@ -34,7 +34,10 @@ zplug load
 # Define utility functions and aliases
 backup_with_timestamp() {
     # Creates a timestamped backup of the given file or directory
-    cp -r "$1" "$1_backup_$(date +%Y-%m-%d_%H:%M:%S)"
+    BACKUP_NAME="$1_backup_$(date +%Y-%m-%d_%H:%M:%S)"
+    cp -r "$1" "$BACKUP_NAME"
+    echo "Created backup at \"./$BACKUP_NAME\""
+    unset BACKUP_NAME
 }
 alias ..="cd .."
 alias ...="cd ../.."
