@@ -28,8 +28,18 @@ if ! zplug check --verbose; then
     zplug install
 fi
 
-# load Zplug plugins
+# Load Zplug plugins
 zplug load
+
+# Define utility functions and aliases
+backup_with_timestamp() {
+    # Creates a timestamped backup of the given file or directory
+    cp -r "$1" "$1_backup_$(date +%Y-%m-%d_%H:%M:%S)"
+}
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias bat="batcat"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

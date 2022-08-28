@@ -11,6 +11,15 @@ A simple one-shot script to set up an awesome shell environment for Ubuntu and M
 * [powerlevel10k](https://github.com/romkatv/powerlevel10k) - an awesome shell theme
 * (optional) [Meslo Nerd Font](https://github.com/romkatv/powerlevel10k#meslo-nerd-font-patched-for-powerlevel10k) - font recommended by the creator of _Powerlevel10k_ theme, adds multiple icons and glyphs to further improve the looks and readability
 
+It also includes the following aliases and functions to `.zshrc`:
+* `..` = `cd ..`
+* `...` = `cd ../..`
+* `....` = `cd ../../..`
+* `....` = `cd ../../..`
+* `backup_with_timestamp FILE_PATH` - creates a timestamped backup of the given file (or folder) in the same directory
+
+
+
 ## Installation
 
 ### Simple (without the custom font)
@@ -28,6 +37,8 @@ curl -fsSL https://raw.githubusercontent.com/JGroxz/presto-prezto/main/presto-pr
    ```
 2. Set up your terminal to use the new Meslo Nerd Font by following the [instructions here](https://github.com/romkatv/powerlevel10k#meslo-nerd-font-patched-for-powerlevel10k).
 
+
+
 ## Demo
 
 After the installation is complete, the command prompt will look like this:
@@ -35,8 +46,10 @@ After the installation is complete, the command prompt will look like this:
 ...or like this, if you installed the version with the Meslo Nerd Font:
 ![ZSH-Prompt](./look-with-nerd-font.png)
 
+
+
 ## Notes
-* If you are already using zsh, your zsh config will be backed up to .zshrc-backup-date
+* If you are already using Zsh, your `.zshrc` file will be backed up to `.zshrc-backup-date`
 * If the text/icons look broken, make sure your terminal is using one of the Nerd fonts
 * Tested on:
   * Ubuntu 20.04
