@@ -11,10 +11,9 @@ A simple one-shot script to set up an awesome shell environment for Ubuntu and M
 * [powerlevel10k](https://github.com/romkatv/powerlevel10k) - an awesome shell theme
 * (optional) [Meslo Nerd Font](https://github.com/romkatv/powerlevel10k#meslo-nerd-font-patched-for-powerlevel10k) - font recommended by the creator of _Powerlevel10k_ theme, adds multiple icons and glyphs to further improve the looks and readability
 
-It also includes the following aliases and functions to `.zshrc`:
+It also includes the following aliases and functions in `.zshrc`:
 * `..` = `cd ..`
 * `...` = `cd ../..`
-* `....` = `cd ../../..`
 * `....` = `cd ../../..`
 * `backup_with_timestamp FILE_PATH` - creates a timestamped backup of the given file (or folder) in the same directory
 
