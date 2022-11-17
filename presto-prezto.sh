@@ -40,8 +40,8 @@ if [[ "$OS" == "Linux" ]] || [[ "$OS" == "Darwin" ]] ; then
     if [[ "$OS" == "Linux" ]]; then
         echo "--> Please, type your password (to 'sudo apt install' the requirements):"
         sudo apt update -y
-        sudo apt install -y zsh bat git snap
-        echo -e "\nInstalling zsh, bat, git and snap"
+        sudo apt install -y zsh bat git
+        echo -e "\nInstalling zsh, bat and git"
     fi
     if [[ "$OS" == "Darwin" ]]; then
         # Inspired from https://github.com/Homebrew/brew
@@ -166,7 +166,8 @@ if [[ "$OS" == "Linux" ]] || [[ "$OS" == "Darwin" ]] ; then
     #--------------------------------------------------
     echo -e "\nInstalling LSDeluxe"
     if [[ "$OS" == "Linux" ]]; then
-        sudo snap install lsd &> /dev/null
+        curl -sL https://raw.githubusercontent.com/wimpysworld/deb-get/main/deb-get | sudo -E bash -s install deb-get
+        deb-get install lsd
     fi
     if [[ "$OS" == "Darwin" ]]; then
         brew install lsd &> /dev/null
