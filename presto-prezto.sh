@@ -44,7 +44,7 @@ if [[ "$OS" == "Linux" ]] || [[ "$OS" == "Darwin" ]] ; then
         echo -e "\nInstalling zsh, bat and git"
     fi
     if [[ "$OS" == "Darwin" ]]; then
-        # Inspired from https://github.com/Homebrew/brew
+        # Inspired by https://github.com/Homebrew/brew
         version_gt() {
         [[ "${1%.*}" -gt "${2%.*}" ]] || [[ "${1%.*}" -eq "${2%.*}" && "${1#*.}" -gt "${2#*.}" ]]
         }
@@ -147,7 +147,7 @@ if [[ "$OS" == "Linux" ]] || [[ "$OS" == "Darwin" ]] ; then
                 execute_sudo "/usr/bin/xcode-select" "--switch" "/Library/Developer/CommandLineTools" &> /dev/null
             fi
         fi
-        # Inspired from https://github.com/Homebrew/brew
+        # Inspired by https://github.com/Homebrew/brew
     fi
     echo -e "\nShell Configurations"
     if [[ "$OS" == "Darwin" ]]; then
@@ -177,7 +177,7 @@ if [[ "$OS" == "Linux" ]] || [[ "$OS" == "Darwin" ]] ; then
     # Prezto and plugins
     #--------------------------------------------------
     echo -e "\nInstalling Prezto"
-    # Install Prezto (by downloading the repo int .zprezto folder in our home directory): https://github.com/sorin-ionescu/prezto
+    # Install Prezto (by downloading the repo into .zprezto folder in our home directory): https://github.com/sorin-ionescu/prezto
     git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
 
     # Create symlinks to link Zsh to Prezto configurations (this will overwrite default Zsh files)
@@ -272,7 +272,7 @@ if [[ "$OS" == "Linux" ]] || [[ "$OS" == "Darwin" ]] ; then
         'try_exec_zsh' '/bin/zsh' "$@" || 'return'
     }
     'exec_zsh' '-i'
-    # Inspired from: https://github.com/romkatv/zsh4humans/blob/v5/sc/exec-zsh-i
+    # Inspired by https://github.com/romkatv/zsh4humans/blob/v5/sc/exec-zsh-i
 
 else
     echo "This script is only supported on macOS and Linux."
