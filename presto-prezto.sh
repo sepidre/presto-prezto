@@ -250,6 +250,19 @@ if [[ "$OS" == "Linux" ]] || [[ "$OS" == "Darwin" ]] ; then
         echo -e "\nInstalled the font"
     fi
 
+    #--------------------------------------------------
+    # Make Zsh the default shell
+    #--------------------------------------------------
+    echo -e "\nMaking Zsh the default shell for user '$(whoami)'..."
+    PATH_TO_ZSH=$(command -v zsh)
+    if [[ $PATH_TO_ZSH ]]; then
+        sudo usermod --shell $PATH_TO_ZSH $(whoami)
+        echo -e "Default shell for user '$(whoami)' is now set to '$PATH_TO_ZSH'."
+    else
+        echo "Could not make Zsh the default shell: Zsh could not be found. This means that installation has failed. Please check the logs above to find the issue."
+        exit 1
+    fi
+
     echo -e "\nPresto-Prezto configuration complete!\n"
 
     if [[ "$WITH_FONT" == true ]]; then
