@@ -197,6 +197,10 @@ if [[ "$OS" == "Linux" ]] || [[ "$OS" == "Darwin" ]] ; then
         sudo cp ~/.zshrc /root/
     fi
 
+    # Download zplug
+    echo -e "\nDownloading zplug..."
+    git clone https://github.com/zplug/zplug ~/.zplug
+
     echo -e "\nPrezto configuration complete (plugins will be installed on the first shell run)"
 
     #--------------------------------------------------
