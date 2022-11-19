@@ -194,7 +194,7 @@ if [[ "$OS" == "Linux" ]] || [[ "$OS" == "Darwin" ]] ; then
     (cd ~/.zprezto/runcoms/ && curl -O https://raw.githubusercontent.com/JGroxz/presto-prezto/main/zshrc) &> /dev/null
     (cd ~/.zprezto/runcoms/ && curl -O https://raw.githubusercontent.com/JGroxz/presto-prezto/main/zpreztorc) &> /dev/null
     if [[ "$OS" == "Linux" ]]; then
-        sudo cp /home/"$(whoami)"/.zshrc /root/
+        sudo cp ~/.zshrc /root/
     fi
 
     echo -e "\nPrezto configuration complete (plugins will be installed on the first shell run)"
@@ -212,7 +212,7 @@ if [[ "$OS" == "Linux" ]] || [[ "$OS" == "Darwin" ]] ; then
 
     (cd ~/ && curl -o ".p10k.zsh" "https://raw.githubusercontent.com/JGroxz/presto-prezto/main/${P10K_CONFIG_FILE}") &> /dev/null
     if [[ "$OS" == "Linux" ]]; then
-        sudo cp /home/"$(whoami)"/.p10k.zsh /root/
+        sudo cp ~/.p10k.zsh /root/
     fi
     echo -e "\nTheme configuration done"
 
