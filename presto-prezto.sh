@@ -166,7 +166,7 @@ if [[ "$OS" == "Linux" ]] || [[ "$OS" == "Darwin" ]] ; then
     #--------------------------------------------------
     echo -e "\nInstalling LSDeluxe"
     if [[ "$OS" == "Linux" ]]; then
-        curl -sL https://raw.githubusercontent.com/wimpysworld/deb-get/main/deb-get | sudo -E bash -s install deb-get
+        curl -fsL https://raw.githubusercontent.com/wimpysworld/deb-get/main/deb-get | sudo -E bash -s install deb-get
         sudo deb-get install lsd
     fi
     if [[ "$OS" == "Darwin" ]]; then
