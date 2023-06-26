@@ -38,7 +38,7 @@ OS="$(uname)"
 if [[ "$OS" == "Linux" ]] || [[ "$OS" == "Darwin" ]] ; then
     echo
     if [[ "$OS" == "Linux" ]]; then
-        echo "--> Please, type your password (to 'sudo apt install' the requirements):"
+        #echo "--> Please, type your password (to 'sudo apt install' the requirements):"
         sudo apt update -y
         sudo apt install -y zsh bat git
         echo -e "\nInstalling zsh, bat and git"
